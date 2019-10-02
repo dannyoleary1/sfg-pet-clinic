@@ -34,3 +34,7 @@ mvnw
 mvnw.cmd
 .mvn
 
+pet-clinic-web/target
+pet-clinic-data/target
+
+target
