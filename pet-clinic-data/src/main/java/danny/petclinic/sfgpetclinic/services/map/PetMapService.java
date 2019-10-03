@@ -3,10 +3,11 @@ package danny.petclinic.sfgpetclinic.services.map;
 import danny.petclinic.sfgpetclinic.model.Pet;
 import danny.petclinic.sfgpetclinic.model.Vet;
 import danny.petclinic.sfgpetclinic.services.CrudService;
+import danny.petclinic.sfgpetclinic.services.PetService;
 
 import java.util.Set;
 
-public class PetMapService extends AbstractMapService<Pet, Long> implements CrudService<Pet, Long> {
+public class PetMapService extends AbstractMapService<Pet, Long> implements PetService {
 
     @Override
     public Set<Pet> findAll() {
