@@ -3,15 +3,16 @@ package danny.petclinic.sfgpetclinic.services.map;
 import danny.petclinic.sfgpetclinic.model.Owner;
 import danny.petclinic.sfgpetclinic.services.CrudService;
 import danny.petclinic.sfgpetclinic.services.OwnerService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
+@Service
 public class OwnerMapService extends AbstractMapService<Owner, Long> implements OwnerService {
     @Override
     public Set<Owner> findAll() {
         return super.findAll();
     }
-
     @Override
     public Owner findById(Long id) {
         return super.findById(id);

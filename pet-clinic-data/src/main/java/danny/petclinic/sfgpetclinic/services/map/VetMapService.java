@@ -3,9 +3,11 @@ package danny.petclinic.sfgpetclinic.services.map;
 import danny.petclinic.sfgpetclinic.model.Vet;
 import danny.petclinic.sfgpetclinic.services.CrudService;
 import danny.petclinic.sfgpetclinic.services.VetService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
+@Service
 public class VetMapService extends AbstractMapService<Vet, Long> implements VetService {
 
     @Override
