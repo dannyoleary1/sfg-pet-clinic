@@ -2,10 +2,13 @@ package danny.petclinic.sfgpetclinic.bootstrap;
 
 
 import danny.petclinic.sfgpetclinic.model.Owner;
+import danny.petclinic.sfgpetclinic.model.PetType;
 import danny.petclinic.sfgpetclinic.model.Vet;
 import danny.petclinic.sfgpetclinic.services.OwnerService;
+import danny.petclinic.sfgpetclinic.services.PetTypeService;
 import danny.petclinic.sfgpetclinic.services.VetService;
 import danny.petclinic.sfgpetclinic.services.map.OwnerMapService;
+import danny.petclinic.sfgpetclinic.services.map.PetTypeMapService;
 import danny.petclinic.sfgpetclinic.services.map.VetMapService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -15,14 +18,26 @@ public class DataLoader implements CommandLineRunner {
 
     private final OwnerService ownerService;
     private final VetService vetService;
+    private final PetTypeService petTypeService;
 
-    public DataLoader(OwnerService ownerService, VetService vetService){
+    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService){
         this.ownerService = ownerService;
         this.vetService = vetService;
+        this.petTypeService = petTypeService;
     }
 
     @Override
     public void run(String... args) throws Exception {
+
+        PetType dog = new PetType();
+        dog.setName("Dog");
+        PetType savedDogPetType = petTypeService.save(dog);
+
+        PetType cat = new PetType();
+        cat.setName("Cat");
+        PetType savedCatPetType = petTypeService.save(cat);
+
+
         Owner owner1 = new Owner();
         owner1.setFirstName("Michael");
         owner1.setLastName("Weston");
